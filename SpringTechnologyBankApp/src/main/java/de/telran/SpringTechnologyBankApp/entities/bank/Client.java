@@ -3,6 +3,9 @@ package de.telran.SpringTechnologyBankApp.entities.bank;
 import de.telran.SpringTechnologyBankApp.entities.enums.*;
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
 import java.util.*;
@@ -13,6 +16,7 @@ import java.util.*;
 @AllArgsConstructor
 @EqualsAndHashCode(of = {"taxNumber", "firstName", "phone"})
 @ToString(of = {"firstName", "lastName"})
+@DynamicUpdate
 @Entity
 @Table(name = "clients")
 public class Client {
@@ -29,6 +33,9 @@ public class Client {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "login")
+    private String login;
 
     @Column(name = "password")
     private String password;
@@ -51,9 +58,11 @@ public class Client {
     private RoleType roleType = RoleType.ROLE_CLIENT;
 
     @Column(name = "created_at", nullable = false, updatable = false)
+    @CreationTimestamp
     private LocalDateTime createdAt;
 
     @Column(name = "updated_at", nullable = false)
+    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)

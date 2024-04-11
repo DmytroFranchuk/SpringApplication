@@ -3,7 +3,6 @@ package de.telran.SpringTechnologyBankApp.controllers.bank;
 import de.telran.SpringTechnologyBankApp.dtos.bank.agreement.AgreementDto;
 import de.telran.SpringTechnologyBankApp.entities.enums.ProductType;
 import de.telran.SpringTechnologyBankApp.entities.enums.StatusType;
-import de.telran.SpringTechnologyBankApp.repositories.bank.ClientRepository;
 import de.telran.SpringTechnologyBankApp.services.bank.interf.AgreementService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

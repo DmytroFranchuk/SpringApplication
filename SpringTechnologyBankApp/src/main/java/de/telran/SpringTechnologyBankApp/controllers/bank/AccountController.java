@@ -1,7 +1,6 @@
 package de.telran.SpringTechnologyBankApp.controllers.bank;
 
 import de.telran.SpringTechnologyBankApp.dtos.bank.account.AccountDto;
-import de.telran.SpringTechnologyBankApp.dtos.bank.client.ClientDto;
 import de.telran.SpringTechnologyBankApp.entities.enums.StatusType;
 import de.telran.SpringTechnologyBankApp.services.bank.interf.AccountService;
 import jakarta.validation.Valid;
@@ -88,14 +87,4 @@ public class AccountController {
         List<AccountDto> accounts = accountService.getAccountsByManagerId(managerId);
         return ResponseEntity.ok(accounts);
     }
-
-
-
-
-
-
-
-
-
-
 }

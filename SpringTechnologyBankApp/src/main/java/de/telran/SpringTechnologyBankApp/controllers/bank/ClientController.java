@@ -1,7 +1,6 @@
 package de.telran.SpringTechnologyBankApp.controllers.bank;
 
 import de.telran.SpringTechnologyBankApp.dtos.bank.client.ClientDto;
-import de.telran.SpringTechnologyBankApp.dtos.bank.product.ProductDto;
 import de.telran.SpringTechnologyBankApp.entities.enums.StatusType;
 import de.telran.SpringTechnologyBankApp.services.bank.interf.ClientService;
 import jakarta.validation.Valid;

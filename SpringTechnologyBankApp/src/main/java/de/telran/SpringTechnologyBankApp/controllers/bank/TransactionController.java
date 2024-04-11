@@ -8,10 +8,9 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/transactions")
@@ -29,5 +28,19 @@ public class TransactionController {
 
         TransactionResponseDto createdTransaction = transactionService.createTransaction(transactionDto);
         return ResponseEntity.ok(createdTransaction);
+    }
+
+    @GetMapping("/clients/{clientId}")
+    public List<TransactionDto> getTransactionsByClientId(
+            @Valid
+            @PathVariable Long clientId) {
+        return transactionService.getAllTransactionsByClientId(clientId);
+    }
+
+    @GetMapping("/clients/last-month/{clientId}")
+    public List<TransactionDto> getTransactionsClientIdForLastMonth(
+            @Valid
+            @PathVariable Long clientId) {
+        return transactionService.getAllTransactionsByClientIdForLastMonth(clientId);
     }
 }

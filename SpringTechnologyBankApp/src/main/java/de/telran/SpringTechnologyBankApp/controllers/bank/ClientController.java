@@ -3,6 +3,7 @@ package de.telran.SpringTechnologyBankApp.controllers.bank;
 import de.telran.SpringTechnologyBankApp.dtos.bank.client.ClientDto;
 import de.telran.SpringTechnologyBankApp.entities.enums.StatusType;
 import de.telran.SpringTechnologyBankApp.services.bank.interf.ClientService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -16,6 +17,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/clients")
+@Tag(name = "Client Controller API")
 @RequiredArgsConstructor
 public class ClientController {
     private final ClientService clientService;

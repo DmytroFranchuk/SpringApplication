@@ -4,6 +4,7 @@ import de.telran.SpringTechnologyBankApp.dtos.bank.agreement.AgreementDto;
 import de.telran.SpringTechnologyBankApp.entities.enums.ProductType;
 import de.telran.SpringTechnologyBankApp.entities.enums.StatusType;
 import de.telran.SpringTechnologyBankApp.services.bank.interf.AgreementService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -18,6 +19,7 @@ import java.util.Map;
 @Validated
 @RestController
 @RequestMapping("/api/v1/agreements")
+@Tag(name = "Agreement Controller API")
 @RequiredArgsConstructor
 public class AgreementController {
     private final AgreementService agreementService;

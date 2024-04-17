@@ -3,6 +3,7 @@ package de.telran.SpringTechnologyBankApp.controllers.bank;
 import de.telran.SpringTechnologyBankApp.dtos.bank.account.AccountDto;
 import de.telran.SpringTechnologyBankApp.entities.enums.StatusType;
 import de.telran.SpringTechnologyBankApp.services.bank.interf.AccountService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
@@ -17,6 +18,7 @@ import java.util.Map;
 @Validated
 @RestController
 @RequestMapping("/api/v1/accounts")
+@Tag(name = "Account Controller API")
 @RequiredArgsConstructor
 public class AccountController {
     private final AccountService accountService;

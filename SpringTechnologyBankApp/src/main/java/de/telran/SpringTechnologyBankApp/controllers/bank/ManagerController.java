@@ -4,6 +4,7 @@ import de.telran.SpringTechnologyBankApp.dtos.bank.manager.ManagerDto;
 import de.telran.SpringTechnologyBankApp.dtos.bank.manager.ManagerDtoForByCondition;
 import de.telran.SpringTechnologyBankApp.entities.enums.StatusType;
 import de.telran.SpringTechnologyBankApp.services.bank.interf.ManagerService;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -17,6 +18,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(path = "/api/v1/managers", produces = MediaType.APPLICATION_JSON_VALUE)
+@Tag(name = "Manager Controller API")
 @RequiredArgsConstructor
 public class ManagerController {
     private final ManagerService managerService;

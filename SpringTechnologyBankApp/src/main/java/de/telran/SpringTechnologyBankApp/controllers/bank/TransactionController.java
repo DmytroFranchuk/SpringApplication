@@ -4,6 +4,7 @@ import de.telran.SpringTechnologyBankApp.dtos.bank.transaction.TransactionDto;
 import de.telran.SpringTechnologyBankApp.dtos.bank.transaction.TransactionResponseDto;
 import de.telran.SpringTechnologyBankApp.services.bank.interf.TransactionService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -16,6 +17,7 @@ import java.util.List;
 @RequestMapping("/api/v1/transactions")
 @RequiredArgsConstructor
 @Tag(name = "Transaction Controller API")
+//@SecurityRequirement(name = "basicAuth")
 public class TransactionController {
 
     private final TransactionService transactionService;

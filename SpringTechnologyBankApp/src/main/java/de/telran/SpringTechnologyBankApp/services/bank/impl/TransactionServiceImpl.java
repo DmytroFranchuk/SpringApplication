@@ -15,6 +15,7 @@ import de.telran.SpringTechnologyBankApp.repositories.bank.AccountRepository;
 import de.telran.SpringTechnologyBankApp.repositories.bank.ClientRepository;
 import de.telran.SpringTechnologyBankApp.repositories.bank.TransactionRepository;
 import de.telran.SpringTechnologyBankApp.services.bank.interf.TransactionService;
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -29,6 +30,7 @@ import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
+@SecurityRequirement(name = "BasicAuth")
 public class TransactionServiceImpl implements TransactionService {
     private final TransactionRepository transactionRepository;
     private final AccountRepository accountRepository;

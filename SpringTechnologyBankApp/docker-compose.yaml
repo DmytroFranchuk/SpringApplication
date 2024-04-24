@@ -23,5 +23,6 @@ services:
 #    depends_on:
 #      - bankofdeutsch_db
     environment:
-      SPRING_DATASOURCE_URL: 'jdbc:postgresql://bankofdeutsch_db:5432/bankofdeutsch'
+#      SPRING_DATASOURCE_URL: 'jdbc:postgresql://bankofdeutsch_db:5432/bankofdeutsch'
+      SPRING_DATASOURCE_URL: 'jdbc:postgresql://localhost:5500/bankofdeutsch'
       JAVA_OPTS: '-Xmx512m'

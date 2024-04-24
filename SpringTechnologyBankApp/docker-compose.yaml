@@ -14,12 +14,12 @@ services:
     volumes:
       - pg_bankofdeutsch:/var/lib/postgresql/data
     ports:
-      - "127.0.0.1:5500:5432"
+      - "0.0.0.0:5500:5432"
   app:
 #    restart: always
     build: .
     ports:
-      - "9090:9090"
+      - "8088:8080"
     depends_on:
       - bankofdeutsch_db
     environment:
